@@ -1,0 +1,190 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilos base */
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #fdfbfb, #ebedee);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  /* Encabezado */
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .counters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .counters span {
+    font-weight: bold;
+    color: #e67e22;
+  }
+  
+  /* Formulario */
+  form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+  
+  form input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    font-size: 15px;
+    outline: none;
+  }
+  
+  form button {
+    padding: 10px 24px;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  form button:hover {
+    background-color: #0097a7;
+  }
+  
+  /* Lista */
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* Tareas */
+  li {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s;
+  }
+  
+  li.completed {
+    background-color: #e2f9e1;
+    text-decoration: line-through;
+    color: #888;
+  }
+  
+  /* Texto */
+  li span {
+    flex: 1;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  li input[type="text"] {
+    flex: 1;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: inherit;
+  }
+  
+  li input[type="text"]:focus {
+    border-color: #00bcd4;
+  }
+  #filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
+  }
+  
+  #filters label {
+    font-weight: bold;
+    color: #444;
+  }
+  
+  #filter-select {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    font-size: 14px;
+    background-color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+  }
+  
+  #filter-select:hover {
+    border-color: #00bcd4;
+  }
+  
+  
+  /* Botones */
+  .button-group {
+    display: flex;
+    gap: 6px;
+  }
+  
+  .button-group button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Completar = azul */
+  .button-group button.complete {
+    background-color: #00b894;
+  }
+  .button-group button.complete:hover {
+    background-color: #019872;
+  }
+  
+  /* Eliminar = rojo */
+  .button-group button.delete {
+    background-color: #e74c3c;
+  }
+  .button-group button.delete:hover {
+    background-color: #c0392b;
+  }
+  
