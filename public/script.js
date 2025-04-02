@@ -38,8 +38,9 @@ async function loadTasks() {
       const inputEdit = document.createElement("input");
       inputEdit.type = "text";
       inputEdit.value = task.title;
-
-      inputEdit.onblur = async () => {
+    
+      // Función para guardar cambios
+      const saveEdit = async () => {
         const newTitle = inputEdit.value.trim();
         if (newTitle && newTitle !== task.title) {
           await fetch(`/tasks/${task.id}`, {
@@ -49,13 +50,30 @@ async function loadTasks() {
           });
           loadTasks();
         } else {
-          span.textContent = task.title;
+          span.textContent = task.title; // Restaurar texto original
         }
       };
-
+    
+      // Evento: Guardar al perder el foco
+      const blurHandler = async () => {
+        await saveEdit();
+      };
+    
+      inputEdit.onblur = blurHandler;
+    
+      // Evento: Guardar al presionar Enter
+      inputEdit.onkeydown = async (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault(); // Evita que el input pierda el foco automáticamente
+          inputEdit.onblur = null; // 🔥 Elimina el evento onblur para evitar doble ejecución
+          await saveEdit();
+        }
+      };
+    
       li.replaceChild(inputEdit, span);
       inputEdit.focus();
     };
+    
 
     // 🔹 Botón para marcar como completada
     const completeBtn = document.createElement("button");
